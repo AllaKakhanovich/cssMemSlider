@@ -98,11 +98,10 @@ input {
   overflow: hidden;
 }
 
-.text {
+.texts {
   width: inherit;
   display: flex;
-  transition: all 0.5s ease;
-  transition: 0.3s ease, color red 0.2s linear;
+  transition: 0.2s ease;
 }
 
 #slide1:checked ~ .controls > .control__text > .text1,
