@@ -4,6 +4,11 @@
   --set-color:#d9e1e0;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
 body {
   color: white;  
   background-color: rgb(70, 71, 71);
@@ -56,10 +61,11 @@ input {
   background-repeat: no-repeat;
   background-size: contain;
   background-color: black;
+  
 }
 
 .slide1 {
-  background-image: url("../assets/img/img1.jpg");  
+  background-image: url("../assets/img/img1.jpg"); 
 }
 .slide2 {
   background-image: url("../assets/img/img2.jpg");
@@ -76,6 +82,7 @@ input {
 #slide3:checked ~ .slider > .slide3,
 #slide4:checked ~ .slider > .slide4 {
   flex: 1 0 100%;
+  transition: all 0.6s ease;
 }
 
 .controls {
@@ -95,6 +102,7 @@ input {
   width: inherit;
   display: flex;
   transition: all 0.5s ease;
+  transition: 0.3s ease, color red 0.2s linear;
 }
 
 #slide1:checked ~ .controls > .control__text > .text1,
@@ -146,4 +154,28 @@ input {
   justify-content: center;
   border-radius: 50%;
   padding: 2rem;
+}
+
+@media (max-width: 38rem) {
+  .controls {
+    flex-direction: column;
+    align-items: start;
+  }
+  .control__text {
+    order: 2;
+  }
+  .control__label {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 30rem) {
+  .slider {
+    height: 50%;
+  }
+
+  .control__text {
+    font-size: 1.1rem;
+  }
 }
